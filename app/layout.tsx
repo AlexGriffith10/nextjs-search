@@ -1,4 +1,6 @@
 import './globals.css'
+import PrimaryLayout from './components/layouts/primary/PrimaryLayout'
+import SidebarLayout from './components/layouts/sidebar/SidebarLayout'
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +14,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {/* <PrimaryLayout justify="items-center"> */}
+        <span>
+          <SidebarLayout />
+          {children}
+        </span>
+        {/* </PrimaryLayout> */}
+      </body>
     </html>
   )
 }
