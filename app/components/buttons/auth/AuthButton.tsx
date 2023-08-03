@@ -1,24 +1,26 @@
+'use client'
 import { useContext } from 'react'
-// import AuthContext from '../../../state/auth/AuthContext'
-import styles from './AuthButton.module.css'
+import AuthContext from '../../../context/auth/AuthContext'
 
 export interface AuthButtonProps
   extends React.ComponentPropsWithoutRef<'button'> {}
+
+export const revalidate = 0
 
 const AuthButton: React.FC<AuthButtonProps> = ({
   className,
   ...buttonProps
 }) => {
-  // const { authenticated, login, logOut } = useContext(AuthContext)
+  const authContext = useContext(AuthContext)
+  const { authenticated, logOut, login } = useContext(AuthContext)
 
   return (
     <button
-      // onClick={authenticated ? logOut : login}
-      className={`${styles.container} ${className} border-1 p-2 px-4 sm:px-6 bg-blue-500 rounded text-white w-28`}
+      onClick={authenticated ? logOut : login}
+      className="border-1 p-2 px-4 sm:px-6 bg-blue-600 rounded text-white w-28"
       {...buttonProps}
     >
-      Placeholder text
-      {/* {authenticated ? 'Sign Out' : 'Sign In'} */}
+      {authenticated ? 'Sign Out' : 'Sign In'}
     </button>
   )
 }

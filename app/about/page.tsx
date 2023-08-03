@@ -4,7 +4,7 @@ import { NextPageWithLayout } from '../pages'
 
 const About: NextPageWithLayout = () => {
   return (
-    <section>
+    <section className="bg-gradient-to-r from-cyan-500 to-blue-500">
       <h2>Layout Example</h2>
       <p>Random text for the example</p>
       <p>More stuff for kicks and giggles</p>

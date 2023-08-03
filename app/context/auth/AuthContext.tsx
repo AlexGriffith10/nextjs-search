@@ -1,4 +1,5 @@
-import { createContext, useState } from 'react'
+'use client'
+import { ReactNode, createContext, useState } from 'react'
 
 interface IAuthContext {
   authenticated: boolean
@@ -13,11 +14,20 @@ const defaultValue: IAuthContext = {
 }
 
 const AuthContext = createContext<IAuthContext>(defaultValue)
+export const revalidate = 0
 
-export const AuthProvider: React.FC = ({ children }) => {
+export const AuthProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [authenticated, setAuthenticated] = useState(defaultValue.authenticated)
-  const login = () => setAuthenticated(true)
-  const logOut = () => setAuthenticated(false)
+  const login = () => {
+    setAuthenticated(true)
+    console.log('set login')
+  }
+  const logOut = () => {
+    setAuthenticated(false)
+    console.log('set log out')
+  }
 
   return (
     <AuthContext.Provider value={{ authenticated, login, logOut }}>

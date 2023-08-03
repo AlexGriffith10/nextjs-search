@@ -3,7 +3,10 @@ import AuthButton from '../../buttons/auth/AuthButton'
 
 export interface HeaderProps extends React.ComponentPropsWithoutRef<'header'> {}
 
-const Header: React.FC<HeaderProps> = ({ className, ...headerProps }) => {
+export const Header: React.FC<HeaderProps> = ({
+  className,
+  ...headerProps
+}) => {
   return (
     <header
       {...headerProps}
