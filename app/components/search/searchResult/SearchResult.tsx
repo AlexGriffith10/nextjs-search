@@ -2,7 +2,6 @@
 
 import { ISearchData } from '@/app/lib/search/types'
 import Link from 'next/link'
-//import { useDummyApiCall } from '@/app/hooks/useDummyApiCall'
 
 export type SearchResultProps = ISearchData &
   React.ComponentPropsWithoutRef<'div'>
@@ -14,7 +13,6 @@ const SearchResult: React.FC<SearchResultProps> = ({
   className,
   ...divProps
 }) => {
-  // const results = async () => useDummyApiCall()
   return (
     <div
       {...divProps}

@@ -7,7 +7,7 @@ const nextConfig = {
   },
   // white list of domains for outside images
   images: {
-    domains: ['i.pravatar.cc'],
+    domains: ['i.pravatar.cc', 'i.dummyjson.com'],
   },
 }
 

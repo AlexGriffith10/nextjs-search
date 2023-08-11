@@ -11,7 +11,6 @@ const AuthButton: React.FC<AuthButtonProps> = ({
   className,
   ...buttonProps
 }) => {
-  const authContext = useContext(AuthContext)
   const { authenticated, logOut, login } = useContext(AuthContext)
 
   return (

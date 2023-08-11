@@ -10,15 +10,16 @@ export interface CardProps {
   tag: string
   time: string
   title: string
+  img?: string
 }
 
-const Card: React.FC<CardProps> = ({ author, body, tag, time, title }) => {
+const Card: React.FC<CardProps> = ({ author, body, tag, time, title, img }) => {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles.cardImageContainer}>
           <Image
-            src={DirectionLogo}
+            src={img ? img : FlowLogo}
             alt="card_image_direction"
             className={styles.cardImage}
             fill
@@ -32,7 +33,7 @@ const Card: React.FC<CardProps> = ({ author, body, tag, time, title }) => {
         <div className={styles.cardFooter}>
           <div className={styles.userImage}>
             <Image
-              src={FlowLogo}
+              src={img ? img : FlowLogo}
               alt="card_image_flow"
               className={styles.cardImage}
               width={40}
